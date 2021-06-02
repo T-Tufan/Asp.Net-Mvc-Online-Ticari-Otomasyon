@@ -1,0 +1,44 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Urun
+@{
+    ViewBag.Title = "UrunGuncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Ürün Güncelleme Sayfası</h2>
+<br />
+@using (@Html.BeginForm("UrunGuncelle", "Urun", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.UrunId)
+    </div>
+    <div class="form-group">
+        @Html.Label("Ürün Ad")
+        @Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Ürün Marka")
+        @Html.TextBoxFor(x => x.UrunMarka, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Ürün Stok")
+        @Html.TextBoxFor(x => x.UrunStok, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Ürün Alış Fiyatı")
+        @Html.TextBoxFor(x => x.UrunAlisFiyatı, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Ürün Satış Fiyatı")
+        @Html.TextBoxFor(x => x.UrunSatisFiyatı, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Ürün Fotoğraf")
+        @Html.TextBoxFor(x => x.UrunFotograf, new { @class = "form-control" })
+    </div>
+    <div>
+        @Html.Label("Ürün Kategori")
+        @Html.DropDownListFor(x => x.Kategori.KategoriId, (List<SelectListItem>)ViewBag.KategoriListe, new { @class = "form-control" })
+    </div>
+    <br />
+    <button class="btn btn-info">Güncelle</button>
+}

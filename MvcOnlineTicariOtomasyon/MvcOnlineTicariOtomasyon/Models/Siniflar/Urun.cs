@@ -24,7 +24,7 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         public decimal UrunAlisFiyatı { get; set; }
         public decimal UrunSatisFiyatı { get; set; }
         //Kategori 
-        public Kategori Kategori { get; set; }
+        public virtual Kategori Kategori { get; set; }
         public bool UrunDurum { get; set; }
 
         [Column(TypeName = "Varchar")]

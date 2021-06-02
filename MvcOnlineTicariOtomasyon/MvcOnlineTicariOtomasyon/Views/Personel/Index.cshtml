@@ -1,0 +1,39 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar;
+@model List<Personel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>@Model[0].Departman.DepartmentAd +" Departmanı Personel Listesi"</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>
+            Personel Id
+        </th>
+        <th>
+            Personel Ad
+        </th>
+        <th>
+            Personel Soyad
+        </th>
+        <th>
+            Personel Fotoğraf
+        </th>
+        <th>
+            Departman
+        </th>
+    </tr>
+    @foreach (var personel in Model)
+    {
+        <tr>
+            <td>@personel.PersonelId</td>
+            <td>@personel.PersonelAd</td>
+            <td>@personel.PersonelSoyad</td>
+            <td>@personel.PersonelFotograf</td>
+            <td>@personel.Departman.DepartmentAd</td>
+        </tr>
+    }
+</table>

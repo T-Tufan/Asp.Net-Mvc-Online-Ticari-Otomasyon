@@ -1,0 +1,40 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Urun
+@{
+    ViewBag.Title = "UrunEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Yeni Ürün </h2>
+
+<form class="form-group" action="/Urun/UrunEkle" method="post">
+    <div class="form-group">
+        @Html.Label("Urun Ad", new { @class = "font-bold" })
+        @Html.TextBoxFor(x => x.UrunAd, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Urun Marka", new { @class = "font-bold" })
+        @Html.TextBoxFor(x => x.UrunMarka, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Urun Stok Miktarı", new { @class = "font-bold" })
+        @Html.TextBoxFor(x => x.UrunStok, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Urun Alış Fiyatı", new { @class = "font-bold" })
+        @Html.TextBoxFor(x => x.UrunAlisFiyatı, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Urun Satış Fiyatı", new { @class = "font-bold" })
+        @Html.TextBoxFor(x => x.UrunSatisFiyatı, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Urun Fotoğraf Adresi", new { @class = "font-bold" })
+        @Html.TextBoxFor(x => x.UrunFotograf, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.Label("Öğrenci Kulüp");
+        @Html.DropDownListFor(x =>x.Kategori.KategoriId,(List<SelectListItem>)ViewBag.allCategories,new {@class = "form-control"})
+    </div>
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>
