@@ -1,0 +1,23 @@
+﻿@model MvcOnlineTicariOtomasyon.Models.Siniflar.Musteriler
+@{
+    ViewBag.Title = "MusteriEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Müşteri Ekle</h2>
+
+<form class="form-group" action="/Musteri/MusteriEkle" method="post">
+    @Html.Label("Müşteri Ad", new { @class = "font-bold" })
+    @Html.TextBoxFor(x => x.MusteriAd, new { @class = "form-control" })
+    <br />
+    @Html.Label("Müşteri Soyad", new { @class = "font-bold" })
+    @Html.TextBoxFor(x => x.MusteriSoyad, new { @class = "form-control" })
+    <br />
+    @Html.Label("Müşteri Şehir", new { @class = "font-bold" })
+    @Html.TextBoxFor(x => x.MusteriSehir, new { @class = "form-control" })
+    <br />
+    @Html.Label("Müşteri E-Mail", new { @class = "font-bold" })
+    @Html.TextBoxFor(x => x.MusteriEmail, new { @class = "form-control"})
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>

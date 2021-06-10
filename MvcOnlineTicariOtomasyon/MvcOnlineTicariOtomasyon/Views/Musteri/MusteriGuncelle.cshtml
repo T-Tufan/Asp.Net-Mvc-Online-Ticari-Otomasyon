@@ -1,0 +1,32 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model Musteriler
+@{
+    ViewBag.Title = "MusteriGuncelle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Müşteri Güncelleme Ekranı</h2>
+<br />
+@using (Html.BeginForm("MusteriGuncelle", "Musteri", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.HiddenFor(x => x.MusteriId)
+
+    @Html.Label("Müşteri Ad")
+    @Html.TextBoxFor(x => x.MusteriAd, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.MusteriAd, "", new { @style = "color : red;" })
+    <br />
+    @Html.Label("Müşteri Soyad")
+    @Html.TextBoxFor(x => x.MusteriSoyad, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.MusteriSoyad, "", new { @style = "color : red;" })
+    <br />
+    @Html.Label("Müşteri Şehir")
+    @Html.TextBoxFor(x => x.MusteriSehir, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.MusteriSehir, "", new { @style = "color : red;" })
+    <br />
+    @Html.Label("Müşteri E-Mail")
+    @Html.TextBoxFor(x => x.MusteriEmail, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.MusteriEmail, "", new { @style = "color : red;" })
+</div>
+    <button class="btn btn-info">Güncelle</button>
+}

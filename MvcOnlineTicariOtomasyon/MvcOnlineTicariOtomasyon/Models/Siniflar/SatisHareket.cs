@@ -11,11 +11,11 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         [Key]
         public int SatisId { get; set; }
         //Ürün
-        public Urun Urun { get; set; }
+        public virtual Urun Urun { get; set; }
         //Müşteri
-        public Musteriler Musteriler { get; set; }
+        public virtual Musteriler Musteriler { get; set; }
         //Personel
-        public Personel Personel { get; set; }
+        public virtual Personel Personel { get; set; }
         public DateTime SatisTarih { get; set; }
         public int Adet { get; set; }
         public decimal Fiyat { get; set; }

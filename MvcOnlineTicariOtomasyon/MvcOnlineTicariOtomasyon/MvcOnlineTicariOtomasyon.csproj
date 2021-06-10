@@ -130,7 +130,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DepartmanController.cs" />
     <Compile Include="Controllers\KategoriController.cs" />
+    <Compile Include="Controllers\MusteriController.cs" />
     <Compile Include="Controllers\PersonelController.cs" />
+    <Compile Include="Controllers\SatisHareketController.cs" />
     <Compile Include="Controllers\UrunController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -279,9 +281,16 @@
     <Content Include="Views\Personel\Index.cshtml" />
     <Content Include="Views\Departman\DepartmanDetay.cshtml" />
     <Content Include="Views\Departman\DepartmanEkle.cshtml" />
+    <Content Include="Views\Departman\DepartmanGuncelle.cshtml" />
+    <Content Include="Views\Departman\DepartmanPersonelSatisBilgi.cshtml" />
+    <Content Include="Views\Musteri\Index.cshtml" />
+    <Content Include="Views\Musteri\MusteriEkle.cshtml" />
+    <Content Include="Views\Musteri\MusteriGuncelle.cshtml" />
+    <Content Include="Views\Musteri\MusteriDetay.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\SatisHareket\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

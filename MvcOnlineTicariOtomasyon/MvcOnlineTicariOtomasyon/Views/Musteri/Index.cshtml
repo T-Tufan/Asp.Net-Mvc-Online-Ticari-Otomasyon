@@ -1,0 +1,33 @@
+﻿@using MvcOnlineTicariOtomasyon.Models.Siniflar
+@model List<Musteriler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Müşteri Listesi</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Musteri Id</th>
+        <th>Müşteri Ad Soyad</th>
+        <th>Müşteri Şehir</th>
+        <th>Müşteri E-Mail</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var musteri in Model)
+    {
+<tr>
+    <td>@musteri.MusteriId</td>
+    <td>@musteri.MusteriAd @musteri.MusteriSoyad</td>
+    <td>@musteri.MusteriSehir</td>
+    <td>@musteri.MusteriEmail</td>
+    <td class="text-center mx-auto widthbtn"><a class="btn btn-danger w-75" href="/Musteri/MusteriSil/@musteri.MusteriId">Sil</a></td>
+    <td class="text-center mx-auto widthbtn"><a class="btn btn-primary w-75" href="/Musteri/MusteriGuncelle/@musteri.MusteriId">Güncelle</a></td>
+    <td class="text-center mx-auto widthbtn"><a class="btn btn-dark w-75" href="/Musteri/MusteriDetay/@musteri.MusteriId">Detaylar</a></td>
+</tr>
+    }
+</table>
+<a class="btn btn-primary" href="/Musteri/MusteriEkle">Yeni Müşteri Ekle</a>

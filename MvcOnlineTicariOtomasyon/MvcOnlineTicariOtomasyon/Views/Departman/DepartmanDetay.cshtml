@@ -4,8 +4,12 @@
     ViewBag.Title = "DepartmanDetay";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>@Model[0].Departman.DepartmentAd Departmanı Personel Listesi</h2>
+<br />
+<h2>Departman Personel Listesi</h2>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active text-dark">Departman Adı : <strong>@ViewBag.depAd</strong></li>
+</ol>
+<br />
 
 <table class="table table-bordered">
     <tr>
@@ -22,17 +26,17 @@
             Personel Fotoğraf
         </th>
         <th>
-            Departman
+            Personele Ait Satışlar
         </th>
     </tr>
     @foreach (var personel in Model)
     {
         <tr>
-            <td>@personel.PersonelId</td>
-            <td>@personel.PersonelAd</td>
-            <td>@personel.PersonelSoyad</td>
-            <td>@personel.PersonelFotograf</td>
-            <td>@personel.Departman.DepartmentAd</td>
+            <td class="text-center">@personel.PersonelId</td>
+            <td class="text-center">@personel.PersonelAd</td>
+            <td class="text-center">@personel.PersonelSoyad</td>
+            <td class="text-center"><a class="btn btn-danger" href="@personel.PersonelFotograf">Fotoğraf</a></td>
+            <td class="text-center"><a href="/Departman/DepartmanPersonelSatisBilgi/@personel.PersonelId" class="btn btn-danger">Satışlar</a></td>
         </tr>
     }
 </table>

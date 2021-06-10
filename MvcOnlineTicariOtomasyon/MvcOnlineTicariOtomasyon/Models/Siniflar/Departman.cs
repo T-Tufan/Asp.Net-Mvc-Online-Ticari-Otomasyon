@@ -17,5 +17,6 @@ namespace MvcOnlineTicariOtomasyon.Models.Siniflar
         public string DepartmentAd { get; set; }
         public bool Durum { get; set; }
         public ICollection<Personel> Personels { get; set; }
+
     }
 }
